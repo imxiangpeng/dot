@@ -1,0 +1,6 @@
+2021/08/24-17:02:21.411717 139856600983296 Log #88: 2797 ops saved to Table #90 OK
+2021/08/24-17:02:21.412966 139856600983296 Archiving /home/alex/.emacs.d/.local/etc/rime/luna_pinyin.userdb/000088.log: OK
+2021/08/24-17:02:21.413875 139856600983296 Table #89: 1251 entries OK
+2021/08/24-17:02:21.414184 139856600983296 Table #90: 2797 entries OK
+2021/08/24-17:02:21.414288 139856600983296 Archiving /home/alex/.emacs.d/.local/etc/rime/luna_pinyin.userdb/MANIFEST-000086: OK
+2021/08/24-17:02:21.419721 139856600983296 **** Repaired leveldb /home/alex/.emacs.d/.local/etc/rime/luna_pinyin.userdb; recovered 2 files; 80068 bytes. Some data may have been lost. ****

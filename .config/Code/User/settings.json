@@ -1,0 +1,40 @@
+{
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "git.openRepositoryInParentFolders": "never",
+    "vscode-neovim.ctrlKeysForInsertMode": [
+        "a",
+        "c",
+        "d",
+        "h",
+        "j",
+        "o",
+        "r",
+        "t",
+        "u",
+        "w",
+        "e",
+        "f",
+        "b",
+        "n",
+        "p"
+    ],
+    "editor.inlayHints.enabled": "off",
+    "files.exclude": {
+        "**/.cache": true
+    },
+    "files.watcherExclude": {
+        "**/.cache/**": true
+    },
+    "workbench.colorCustomizations": {
+
+    },
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid"
+}

@@ -36,5 +36,7 @@
 
     },
     "editor.minimap.enabled": false,
-    "editor.cursorBlinking": "solid"
+    "editor.cursorBlinking": "solid",
+    "explorer.excludeGitIgnore": true,
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${rootPath}${separator}${profileName}${separator}${appName}"
 }

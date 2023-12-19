@@ -27,10 +27,12 @@
     ],
     "editor.inlayHints.enabled": "off",
     "files.exclude": {
-        "**/.cache": true
+      "**/.cache": true,
+      "out*/**": true
     },
     "files.watcherExclude": {
-        "**/.cache/**": true
+      "**/.cache/**": true,
+      "**/out*/**": true
     },
     "workbench.colorCustomizations": {
 
@@ -38,5 +40,19 @@
     "editor.minimap.enabled": false,
     "editor.cursorBlinking": "solid",
     "explorer.excludeGitIgnore": true,
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${rootPath}${separator}${profileName}${separator}${appName}"
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${rootPath}${separator}${profileName}${separator}${appName}",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "cmake.showOptionsMovedNotification": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.autoIndent": "none",
+    "files.trimFinalNewlines": true,
+    "files.eol": "\n",
+    "task.autoDetect": "off",
+    "launch": {
+
+      "configurations": [],
+      "compounds": []
+    }
 }

@@ -54,5 +54,8 @@
 
       "configurations": [],
       "compounds": []
-    }
+    },
+    "clangd.arguments": [
+      "-j=1"
+    ]
 }

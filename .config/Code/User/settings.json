@@ -9,21 +9,23 @@
     "C_Cpp.intelliSenseEngine": "disabled",
     "git.openRepositoryInParentFolders": "never",
     "vscode-neovim.ctrlKeysForInsertMode": [
-        "a",
-        "c",
-        "d",
-        "h",
-        "j",
-        "o",
-        "r",
-        "t",
-        "u",
-        "w",
-        "e",
-        "f",
-        "b",
-        "n",
-        "p"
+      "a",
+      "c",
+      "d",
+      "h",
+      "j",
+      "o",
+      "r",
+      "t",
+      "u",
+      "w",
+      "e",
+      "f",
+      "b",
+      "n",
+      "p",
+      "x",
+      "y"
     ],
     "editor.inlayHints.enabled": "off",
     "files.exclude": {
@@ -44,18 +46,20 @@
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "cmake.showOptionsMovedNotification": false,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "editor.autoIndent": "none",
     "files.trimFinalNewlines": true,
     "files.eol": "\n",
     "task.autoDetect": "off",
     "launch": {
+
 
       "configurations": [],
       "compounds": []
     },
     "clangd.arguments": [
       "-j=1"
-    ]
+    ],
+    "update.mode": "manual",
+    "editor.stickyTabStops": true,
+    "extensions.ignoreRecommendations": true,
+    "postman.telemetry.enabled": false
 }

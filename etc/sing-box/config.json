@@ -1,103 +1,126 @@
 {
-  "dns":{
-    "servers":[
-      {
-        "tag":"cf",
-        "address":"https://1.1.1.1/dns-query"
-      },
-      {
-        "tag":"local",
-        "address":"223.5.5.5",
-        "detour":"direct"
-      },
-      {
-        "tag":"block",
-        "address":"rcode://success"
-      }
-    ],
-    "rules":[
-      {
-        "geosite":"category-ads-all",
-        "server":"block",
-        "disable_cache":true
-      },
-      {
-        "outbound":"any",
-        "server":"local"
-      },
-      {
-        "geosite":"cn",
-        "server":"local"
-      },{
-        "domain": ["office.inspur.com", "mail.inspur.com", "wolai.com", "cdn.wostatic.cn"],
-        "server":"local"
-      }
-    ],
-    "strategy":"ipv4_only"
-  },
-  "inbounds":[
-    {
-      "type":"tun",
-      "inet4_address":"172.19.0.1/30",
-      "auto_route":true,
-      "strict_route":false,
-      "sniff":true
-    }
-  ],
-  "outbounds":[
-    {
-      "type":"hysteria2",
-      "tag":"proxy",
-      "server":"www.cast.ip-dynamic.org",
-      "server_port":8448,
-      "up_mbps":20,
-      "down_mbps":100,
-      "password":"xxxx",
-      "obfs":{
-        "type":"salamander",
-        "password":"yyyy"
-      },
-      "tls":{
-        "enabled":true,
-        "server_name":"cast.ip-dynamic.org",
-        "insecure":true
-      }
-    },
-    {
-      "type":"direct",
-      "tag":"direct"
-    },
-    {
-      "type":"block",
-      "tag":"block"
-    },
-    {
-      "type":"dns",
-      "tag":"dns-out"
-    }
-  ],
-  "route":{
-    "rules":[
-      {
-        "protocol":"dns",
-        "outbound":"dns-out"
-      },
-      {
-        "geosite":"cn",
-        "geoip":[
-          "private",
-          "cn"
+    "dns": {
+        "servers": [
+            {
+                "tag": "cf",
+                "address": "https://1.1.1.1/dns-query"
+            },
+            {
+                "tag": "local",
+                "address": "223.5.5.5",
+                "detour": "direct"
+            },
+            {
+                "tag": "block",
+                "address": "rcode://success"
+            },
+            {
+                "tag": "resolved",
+                "address": "127.0.0.53",
+                "detour": "direct"
+            }
         ],
-        "domain": ["office.inspur.com", "mail.inspur.com", "wolai.com", "cdn.wostatic.cn"],
-	"domain_suffix": ["wolai.com"],
-        "outbound":"direct"
-      },
-      {
-        "geosite":"category-ads-all",
-        "outbound":"block"
-      }
+        "rules": [
+            {
+                "geosite": "category-ads-all",
+                "server": "block",
+                "disable_cache": true
+            },
+            {
+                "domain_suffix": [
+                    "inspur.com"
+                ],
+                "server": "resolved"
+            },
+            {
+                "outbound": "any",
+                "server": "local"
+            },
+            {
+                "geosite": "cn",
+                "server": "local"
+            },
+            {
+                "domain": [
+                    "wolai.com",
+                    "cdn.wostatic.cn"
+                ],
+                "domain_suffix": [
+                    "wolai.com"
+                ],
+                "server": "local"
+            }
+        ],
+        "strategy": "ipv4_only"
+    },
+    "inbounds": [
+        {
+            "type": "tun",
+            "inet4_address": "172.19.0.1/30",
+            "auto_route": true,
+            "strict_route": false,
+            "sniff": true
+        }
     ],
-    "auto_detect_interface":true
-  }
+    "outbounds": [
+        {
+            "type": "hysteria2",
+            "tag": "proxy",
+            "server": "www.cast.ip-dynamic.org",
+            "server_port": 8448,
+            "up_mbps": 20,
+            "down_mbps": 100,
+            "password": "xxxx",
+            "obfs": {
+                "type": "salamander",
+                "password": "yyyy"
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "cast.ip-dynamic.org",
+                "insecure": true
+            }
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
+        },
+        {
+            "type": "block",
+            "tag": "block"
+        },
+        {
+            "type": "dns",
+            "tag": "dns-out"
+        }
+    ],
+    "route": {
+        "rules": [
+            {
+                "protocol": "dns",
+                "outbound": "dns-out"
+            },
+            {
+                "geosite": "cn",
+                "geoip": [
+                    "private",
+                    "cn"
+                ],
+                "domain": [
+                    "wolai.com",
+                    "cdn.wostatic.cn"
+                ],
+                "domain_suffix": [
+                    "inpsur.com",
+                    "wolai.com"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geosite": "category-ads-all",
+                "outbound": "block"
+            }
+        ],
+        "auto_detect_interface": true
+    }
 }
-

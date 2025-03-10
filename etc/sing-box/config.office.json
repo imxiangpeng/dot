@@ -52,7 +52,7 @@
   "inbounds": [
     {
       "type": "tun",
-      "address": "172.19.0.1/30",
+      "address": "172.128.0.1/30",
       "auto_route": true,
       "strict_route": false,
       "sniff": true
@@ -64,8 +64,8 @@
       "tag": "proxy",
       "server": "www.cast.ip-dynamic.org",
       "server_port": 8448,
-      "up_mbps": 20,
-      "down_mbps": 100,
+      "up_mbps": 1000,
+      "down_mbps": 1000,
       "password": "xxxx",
       "obfs": {
         "type": "salamander",
@@ -74,6 +74,24 @@
       "tls": {
         "enabled": true,
         "server_name": "cast.ip-dynamic.org",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "proxy_cn",
+      "server": "www.cast.ip-dynamic.org",
+      "server_port": 9449,
+      "up_mbps": 1000,
+      "down_mbps": 1000,
+      "password": "xxxx",
+      "obfs": {
+        "type": "salamander",
+        "password": "yyyy"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cast.ip-dynamic.org",
         "insecure": true
       }
     },
@@ -100,6 +118,9 @@
           "geoip-cn",
           "geosite-cn"
         ],
+        "outbound": "proxy_cn"
+      },
+      {
         "domain_suffix": [
           "inpsur.com",
           "wolai.com"
